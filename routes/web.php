@@ -15,6 +15,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Route::get('mahasiswa','MahasiswaController@index');
+//Route::get('mahasiswa/tambah','MahasiswaController@create');
+
+
+// Route::post('mahasiwa/tambah','MahasiswaController@store'); menyimpan
+// Route::post('mahasiwa/tambah','MahasiswaController@edit'); edit
+// Route::post('mahasiwa/tambah','MahasiswaController@destroy'); menghapus
+// Route::post('mahasiwa/tambah','MahasiswaController@show'); tampilan edit
+
+// Route::get('mahasiswa','MahasiswaController@print);
+
+// Route::resource('mahasiswa','MahasiswaController');
+
+Route::get('mahasiswa','MahasiswaController@index')-> name('mhs');
+Route::get('mahasiswa/tambah','MahasiswaController@create')-> name('mahasiswa/tambah');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
