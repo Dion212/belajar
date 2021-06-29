@@ -28,9 +28,14 @@ Route::get('/', function () {
 
 // Route::resource('mahasiswa','MahasiswaController');
 
+
 Route::get('mahasiswa','MahasiswaController@index')-> name('mhs');
 Route::get('mahasiswa/tambah','MahasiswaController@create')-> name('mahasiswa/tambah');
+Route::post('simpan.mhs','MahasiswaController@store')->name('simpan.mhs');
+Route::get('mahasiswa.edit/{id}', 'MahasiswaController@edit')->name('mahasiswa.edit');
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+

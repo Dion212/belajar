@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row justify-content-centre">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Data Mahasiswa
                     <a href= "{{route('mahasiswa/tambah')}}" class="btn btn-sm btn-primary float-right">Tambah Data</a>
@@ -32,7 +32,7 @@
                                                 <td>{{$mhs ->hp}}</td>
                                                 <td>{{$mhs ->alamat}}</td>
                                                 <td>
-                                                    <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                                                    <a href="{{ route('mahasiswa.edit', $mhs->id) }}" class="btn btn-sm btn-warning">Edit</a>
                                                     <a href="#" class="btn btn-sm btn-danger">Hapus</a>
                                                 </td>
                                             </tr>
@@ -42,5 +42,6 @@
             </div>
         </div>
     </div>
+
 </div>
 @endsection
