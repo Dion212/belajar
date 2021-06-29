@@ -89,8 +89,13 @@ class MahasiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $mahasiswa = Mahasiswa::findorfail($id);
+        $mahasiswa->update($request->all());
+        // dd($mahasiswa);
+        //$mahasiswa->update();
+        return redirect()->route('mhs');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -100,7 +105,10 @@ class MahasiswaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $mahasiswa = Mahasiswa::find($id);
+        $mahasiswa->delete();
+        return redirect()->route('mhs');
+
     }
 
 

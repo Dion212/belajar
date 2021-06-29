@@ -32,8 +32,8 @@
                                                 <td>{{$mhs ->hp}}</td>
                                                 <td>{{$mhs ->alamat}}</td>
                                                 <td>
-                                                    <a href="{{ route('mahasiswa.edit', $mhs->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                                                    <a href="#" class="btn btn-sm btn-danger">Hapus</a>
+                                                    <a href="{{ route('edit.mahasiswa', $mhs->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                                                    <a href="{{ route('hapus.mahasiswa', $mhs->id) }}" class="btn btn-sm btn-danger">Hapus</a>
                                                 </td>
                                             </tr>
                                             @endforeach

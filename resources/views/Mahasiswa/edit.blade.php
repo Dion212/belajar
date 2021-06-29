@@ -10,9 +10,9 @@
         </div>
         <div class="card-body">
             {{-- <form action="{{route('mahasiswa.store')}}" method="post" class="form-item"> --}}
-                <form action="{{ route('mahasiswa.edit', 'id') }}" method="post" class="form-item">
+                <form action="{{ route('update.mahasiswa', $mahasiswa->id) }}" method="post" class="form-item">
                 @csrf
-                    @method('Patch')
+                    @method('put')
                 <div class="form-group">
                     <label for="nama">NPM</label>
                     <input type="text" name="npm" class="form-control col-md-12" placeholder="Masukkan Npm"  value="{{ is_null
