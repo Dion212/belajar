@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Mahasiswa ;
 use Illuminate\Http\Request;
+use Alert;
+//use UxWeb\SweetAlert\SweetAlert;
+
 
 class MahasiswaController extends Controller
 {
@@ -12,6 +15,19 @@ class MahasiswaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    // private $message=[
+    //     'required'=>'Data Harus Diisi.',
+    //     'npm.max'=>'data melebihi karakter :8',
+    //     'hp.max'=>'data melebihi karakter :16',
+    //     'nama.string'=>'Field nama harus berisi alfabet',
+    // ];
+
+    //  private $rules=[
+    //     'npm'=>['required','max:8'],
+    //     'hp'=>['required','numeric','max:16'],
+    //      'nama'=>['required','string','max:30']
+    //  ];
     public function index()
     {
         $mahasiswa = Mahasiswa::all();
@@ -43,6 +59,8 @@ class MahasiswaController extends Controller
 
 
         //validasi
+        // $this->validate($request,$this->rules,$this->message);
+
 
         //  $mahasiswa = new Mahasiswa;
         //   $mahasiswa->npm=$request->name;
@@ -53,6 +71,8 @@ class MahasiswaController extends Controller
         // coding simpan
 
         $mahasiswa= mahasiswa::create($request->all());
+        // Alert::success('Success Title', 'Success Message');
+        alert()->success('Selemat', 'Data Berhasil Disimpan');
          return redirect()->route('mhs');
     }
 
@@ -91,8 +111,11 @@ class MahasiswaController extends Controller
     {
         $mahasiswa = Mahasiswa::findorfail($id);
         $mahasiswa->update($request->all());
+        alert()->success('Selamat', 'Data Berhasil DiUpdate');
+
         // dd($mahasiswa);
         //$mahasiswa->update();
+
         return redirect()->route('mhs');
     }
 
@@ -107,6 +130,8 @@ class MahasiswaController extends Controller
     {
         $mahasiswa = Mahasiswa::find($id);
         $mahasiswa->delete();
+        alert()->success('Selamat', 'Data Berhasil Dihapus');
+
         return redirect()->route('mhs');
 
     }
