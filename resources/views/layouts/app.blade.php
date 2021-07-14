@@ -57,6 +57,15 @@
                                 </li>
                             @endif
                         @else
+                        <li class="nav-item">
+                            <a class="nav-link" href={{route('mhs')}}>mahasiswa</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href={{route('makul.index')}}>Makul</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href={{route('nilai.index')}}>Nilai</a>
+                          </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

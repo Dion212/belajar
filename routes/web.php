@@ -38,6 +38,9 @@ Route::get('mahasiswa.edit/{id}', 'MahasiswaController@edit')->name('edit.mahasi
 Route::put('mahasiswa.update/{id}','MahasiswaController@update')->name('update.mahasiswa');
 Route::get('mahasiswa.hapus/{id}','MahasiswaController@destroy')->name('hapus.mahasiswa');
 
+Route::resource('makul','MakulController');
+
+Route::resource('nilai','NilaiController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

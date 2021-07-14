@@ -15,5 +15,7 @@ class Mahasiswa extends Model
                                      'hp',
                                      'alamat'];
     public $timestamps = false;
-
+    public function nilai(){
+        return $this->belongsTo('App\nilai');
+    }
 }

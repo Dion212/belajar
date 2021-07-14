@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Makul;
 class MakulController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class MakulController extends Controller
      */
     public function index()
     {
-        //
+        $makul = makul::all();
+        return view('makul.index',compact('makul'));
     }
 
     /**
@@ -23,7 +24,7 @@ class MakulController extends Controller
      */
     public function create()
     {
-        //
+        return view('makul.tambah');
     }
 
     /**
@@ -34,7 +35,9 @@ class MakulController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $makul= makul::create($request->all());
+        alert()->success('Selemat', 'Data Berhasil Disimpan');
+         return redirect()->route('makul.index');
     }
 
     /**
@@ -56,8 +59,9 @@ class MakulController extends Controller
      */
     public function edit($id)
     {
-        //
-
+        $makul = makul::find($id);
+        // dd($makul);
+        return view ('makul.edit', compact('makul'));
     }
 
     /**
@@ -69,7 +73,14 @@ class MakulController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $makul = makul::findorfail($id);
+        $makul->update($request->all());
+        alert()->success('Selamat', 'Data Berhasil DiUpdate');
+
+        // dd($makul);
+        //$makul->update();
+
+        return redirect()->route('makul.index');
     }
 
     /**
@@ -80,6 +91,11 @@ class MakulController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $makul = makul::findorfail($id);
+       $makul ->delete();
+    // makul::destroy($id);
+    //    dd($makul);
+        alert()->success('Selamat', 'Data Berhasil Dihapus');
+        return redirect()->route('makul.index');
     }
 }
