@@ -7,6 +7,7 @@ use App\Mahasiswa;
 use App\Makul;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Alert;
 
 class NilaiController extends Controller
 {
@@ -18,13 +19,13 @@ class NilaiController extends Controller
     public function index()
     {
 
-        $data = DB::table('nilai')
-                    ->join('makul','makul_id','=','makul.id')
-                    ->join('mahasiswa','mahasiswa_id','=','mahasiswa.id')
-                    ->get();
-        // $makul= Nilai::all();
-        // $nilai = Nilai::all();
-        // $data=[nilai::all(),Mahasiswa::all(),Makul::all()];
+        // $data = DB::table('nilai')
+        //             ->join('makul','nilai.makul_id','=','makul.id')
+        //             ->join('mahasiswa','nilai.mahasiswa_id','=','mahasiswa.id')
+        //             ->select('nilai.*', 'mahasiswa.npm','mahasiswa.nama_mahasiswa','makul.nama_makul','makul.sks')
+        //             ->get();
+                    // dd($data);
+        $data=Nilai::with(['mahasiswa','makul'])->get();
         return view('nilai.index',compact('data'));
     }
 
@@ -72,7 +73,10 @@ class NilaiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $nilai=Nilai::findorfail($id);
+        $makul=Makul::all();
+        $mahasiswa=Mahasiswa::all();
+        return view ('nilai.edit',compact('nilai','makul','mahasiswa'));
     }
 
     /**
@@ -84,7 +88,10 @@ class NilaiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $nilai = Nilai::findorfail($id);
+        $nilai->update($request->all());
+        alert()->success('Selamat', 'Data Berhasil DiUpdate');
+        return redirect()->route('nilai.index');
     }
 
     /**
@@ -95,6 +102,9 @@ class NilaiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $nilai=Nilai::findorfail($id);
+        $nilai->delete();
+        alert()->success('Selamat', 'Data Berhasil Dihapus');
+        return redirect()->route('nilai.index');
     }
 }

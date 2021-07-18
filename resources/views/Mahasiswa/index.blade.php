@@ -11,11 +11,11 @@
                 </div>
                 <div class="card-body">
                     </div class="table-responsive">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered table-hover">
                                             <tr>
                                                 <th>NO</th>
-                                                <th>NPM</th>
-                                                <th>NAMA LENGKAP</th>
+                                                <th >NPM</th>
+                                                <th >NAMA LENGKAP</th>
                                                 <th>TTL</th>
                                                 <th>JENIS KELAMIN</th>
                                                 <th>NO HP</th>
@@ -29,7 +29,7 @@
                                             <tr>
                                                 <td>{{$no++}} </td>
                                                 <td>{{$mhs ->npm}}</td>
-                                                <td>{{$mhs ->nama_mahasiswa}}</td>
+                                                <td  >{{$mhs ->nama_mahasiswa}}</td>
                                                 <td>{{$mhs ->tempat_lahir.', '.$mhs->tgl_lahir }}</td>
                                                 <td>{{$mhs ->jenis_kelamin}}</td>
                                                 <td>{{$mhs ->hp}}</td>

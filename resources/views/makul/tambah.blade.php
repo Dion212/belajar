@@ -47,7 +47,7 @@
 
                  {{---------------------------------------}}
                 <button type="submit" class="btn btn-primary " name="simpan">Simpan</button>
-                <a href="{{route('mhs')}}" class="btn btn-md btn-danger" >Batal</a>
+                <a href="{{route('makul.index')}}" class="btn btn-md btn-danger" >Batal</a>
             </form>
         </div>
     </div>

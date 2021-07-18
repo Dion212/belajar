@@ -17,19 +17,22 @@
 @enderror
                 <div class="form-group{{ $errors->has('npm') ? ' has-error' : '' }}">
                     <label for="nama">NPM</label>
-                    <input type="text" name="npm" class="form-control col-md-12" placeholder="Masukkan Npm">
+                    <input type="text" name="npm" class="form-control col-md-12" placeholder="Masukkan Npm" required>
                     <small class="text-danger">{{ $errors->first('npm') }}</small>
+
                 </div>
-                <div class="form-group">
+                <div class="form-group{{ $errors->has('nama_mahasiswa') ? ' has-error' : '' }}">
                     <label for="nama">Nama Lengkap</label>
                     <input type="text" name="nama_mahasiswa" class="form-control col-md-12" placeholder="Masukkan Nama">
+                    <small class="text-danger">{{ $errors->first('nama_mahasiswa') }}</small>
                 </div>
                 {{-- ------------------------------------- --}}
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group">
+                        <div class="form-group{{ $errors->has('tempat_lahir') ? ' has-error' : '' }}">
                             <label for="nama">Tempat Lahir</label>
                             <input type="text" name="tempat_lahir" class="form-control col-md-12" placeholder="Tempat Lahir">
+                            <small class="text-danger">{{ $errors->first('tempat_lahir') }}</small>
                         </div>
                     </div>
                     <div class="col-md-6">

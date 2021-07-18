@@ -41,7 +41,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        {{-- <li class="nav-item">
+                            <a class="nav-link" href={{route('mhs')}}>mahasiswa</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href={{route('makul.index')}}>Makul</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href={{route('nilai.index')}}>Nilai</a>
+                          </li> --}}
                     </ul>
 
                     <!-- Right Side Of Navbar -->

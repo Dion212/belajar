@@ -28,19 +28,29 @@ Route::get('/', function () {
 
 // Route::resource('mahasiswa','MahasiswaController');
 
-
-Route::get('mahasiswa','MahasiswaController@index')-> name('mhs');
+Route::prefix('dion')->group(function(){
+ Route::get('mahasiswa','MahasiswaController@index')-> name('mhs');
 Route::get('mahasiswa/tambah','MahasiswaController@create')-> name('mahasiswa/tambah');
 Route::post('simpan.mhs','MahasiswaController@store')->name('simpan.mhs');
-
-
 Route::get('mahasiswa.edit/{id}', 'MahasiswaController@edit')->name('edit.mahasiswa');
 Route::put('mahasiswa.update/{id}','MahasiswaController@update')->name('update.mahasiswa');
 Route::get('mahasiswa.hapus/{id}','MahasiswaController@destroy')->name('hapus.mahasiswa');
-
-Route::resource('makul','MakulController');
-
 Route::resource('nilai','NilaiController');
+Route::resource('makul','MakulController');
+});
+
+// Route::get('mahasiswa','MahasiswaController@index')-> name('mhs');
+// Route::get('mahasiswa/tambah','MahasiswaController@create')-> name('mahasiswa/tambah');
+// Route::post('simpan.mhs','MahasiswaController@store')->name('simpan.mhs');
+
+
+// Route::get('mahasiswa.edit/{id}', 'MahasiswaController@edit')->name('edit.mahasiswa');
+// Route::put('mahasiswa.update/{id}','MahasiswaController@update')->name('update.mahasiswa');
+// Route::get('mahasiswa.hapus/{id}','MahasiswaController@destroy')->name('hapus.mahasiswa');
+
+// // Route::resource('makul','MakulController');
+
+// Route::resource('nilai','NilaiController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

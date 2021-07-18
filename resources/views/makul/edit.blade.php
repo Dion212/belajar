@@ -6,7 +6,7 @@
 
     <div class="card">
         <div class="card-haeder bg-primary text-white">
-            Tambah Data
+            Edit Data
         </div>
         <div class="card-body">
             {{-- <form action="{{route('mahasiswa.store')}}" method="post" class="form-item"> --}}

@@ -16,6 +16,6 @@ class Mahasiswa extends Model
                                      'alamat'];
     public $timestamps = false;
     public function nilai(){
-        return $this->belongsTo('App\nilai');
+        return $this->hasMany('App\nilai');
     }
 }

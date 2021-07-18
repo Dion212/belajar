@@ -20,13 +20,15 @@ class MahasiswaController extends Controller
     //     'required'=>'Data Harus Diisi.',
     //     'npm.max'=>'data melebihi karakter :8',
     //     'hp.max'=>'data melebihi karakter :16',
-    //     'nama.string'=>'Field nama harus berisi alfabet',
+    //     'nama_mahasiswa.alpha'=>'Field nama harus berisi alfabet',
+    //     'tempat_lahir.alpha'=>'Field nama harus berisi alfabet',
     // ];
 
     //  private $rules=[
     //     'npm'=>['required','max:8'],
-    //     'hp'=>['required','numeric','max:16'],
-    //      'nama'=>['required','string','max:30']
+    //     // 'hp'=>['required','numeric','max:16'],
+    //      'nama_mahasiswa'=>['required','alpha','max:30'],
+    //      'tempat_lahir'=>['required','alpha','max:30']
     //  ];
     public function index()
     {
